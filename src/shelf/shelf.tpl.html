@@ -1,0 +1,11 @@
+<h1 class="sr-only">Bookshelf</h1>
+
+<link rel="stylesheet" href="shelf/shelf.css">
+
+<div class="publications-list">
+	<a ui-sref="viewer({publicationLabel: publication.friendlyId})" class="publication" ng-repeat="publication in publications">
+		<img class="publication-thumb" ng-src="{{ :: coverUrlPrefix + '/' + publication.cover }}">
+		<h3>{{ :: publication.title }}</h3>
+		<h4>{{ :: publication.subtitle }}</h4>
+	</a>
+</div>

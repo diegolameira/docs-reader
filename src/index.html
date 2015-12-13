@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<link rel="stylesheet" href="main.css">
+</head>
+<body ng-app="app">
+
+	<nav class="app-navbar">
+		<button class="menu-trigger" ng-click="showSidebar">Menu</button>
+	</nav>
+
+	<aside class="app-sidebar" ng-style="{'active': showSidebar}">
+
+		<div class="user">
+		</div>
+
+		<menu>
+		</menu>
+		
+	</aside>
+
+	<main class="app-main" ui-view>
+	</main>
+
+	<script src="bower_components/lodash/lodash.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+	<script src="components/navbar/navbar.js"></script>
+	<script src="components/handler/handler.js"></script>
+	<script src="components/publication/publication.js"></script>
+	<script src="components/reader/pdf/pdf.js"></script>
+
+	<script src="shelf/shelf.js"></script>
+	<script src="viewer/viewer.js"></script>
+
+	<script src="main.js"></script>
+	
+
+
+</body>
+</html>

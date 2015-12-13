@@ -1,0 +1,13 @@
+{
+  "name": "omnireader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Diego Lameira",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-shell": "^0.5.1"
+  }
+}

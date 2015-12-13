@@ -1,0 +1,25 @@
+{
+  "name": "omnireader",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Diego Lameira"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "lodash": "~3.10.1",
+    "jquery": "~2.1.4"
+  }
+}
