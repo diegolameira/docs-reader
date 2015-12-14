@@ -22,10 +22,15 @@
 
 		$scope.publication = {};
 
+		$scope.$watch('user', function(user){
+			if (!user) return;
+
 		Publication.getByLabelFull($stateParams.publicationLabel)
 			.then(function(publication){
 				$scope.publication = publication;
 			});
+
+		});
 
 	}
 

@@ -23,11 +23,16 @@
 		$scope.coverUrlPrefix = Server.remote() + '/api/provisioning/cover/';
 		$scope.publications = [];
 
+		$scope.$watch('user', function(user){
+			if (!user) return;
+
 		Publication.list()
 			.then(function(publications){
 				$scope.publications = publications;
 			});
 
+		});
+		
 	}
 
 })();

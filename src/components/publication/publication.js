@@ -4,7 +4,7 @@
 	angular.module('app.publication', [])
 		.service('Publication', Publication)
 
-	function Publication($log, $http, $q, $filter, Server, Handler)
+	function Publication($log, $http, $timeout, $q, $filter, Server, Handler, Auth)
 	{
 
 		var cache;
@@ -68,7 +68,7 @@
 
 						var _publication = response.data;
 
-						replicate(_publication);
+						// replicate(_publication);
 
 						angular.extend(publication, _publication);
 

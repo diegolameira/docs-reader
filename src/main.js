@@ -4,6 +4,7 @@
 	angular.module('app.core', [
 		'ui.router',
 
+		'app.auth',
 		'app.handler',
 		'app.shelf',
 		'app.viewer',
@@ -20,22 +21,14 @@
 			isDevelopment: function(){ return true; }
 		})
 		.constant('Server', {
-			remote: function(){ return 'http://publisher.poligno.com'; }
+			remote: function(){ return 'http://poliedro.viewer.poligno.com'; }
 		})
 
-	function Run($http, Server)
+	function Run($rootScope, Auth)
 	{
-
-		var aplicationId = 'poliedro';
-		var appVersion = '4.0.0';
-		var config = {
-			url: Server.remote() + '/api/provisioning/login/' + aplicationId + '/' + appVersion,
-			method: 'POST',
-			dataType: 'json',
-			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-			data: 'login=suporte@lumis.com.br&password=lumis&deviceId=webviewer'
-		}
-		$http(config);
+		Auth.login().then(function(user){
+			$rootScope.user = user;
+		});
 	}
 
 	function Config($logProvider, $urlRouterProvider, Environment)

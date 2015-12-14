@@ -5,7 +5,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	position: absolute;
+	overflow-x: hidden;
 	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 	top: 0;
 	bottom: 0;
 	left: 0;
