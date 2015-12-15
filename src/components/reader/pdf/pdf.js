@@ -21,7 +21,7 @@
 
 		function controller($scope, Server)
 		{
-			$scope.pageUrlPrefix = Server.remote() + '/api/provisioning/media/';
+			$scope.pageUrlPrefix = Server.remote() + '/api/provisioning';
 		}
 
 		function compile(tElement, tAttrs)
@@ -69,8 +69,10 @@
 
 		return {
 			restrict: 'EA',
-			template: '<span class="page-label">{{::page.label}}</span>',
-			compile: compile
+			template: 
+				'<img ng-src="{{ :: pageUrlPrefix + \'/thumbnail/\' + publication.versionId + \'/\' + (page.pageIndex - 1) }}" />'
+			+   '<span class="page-label">{{::page.label}}</span>'
+			, compile: compile
 		};
 
 		function compile(tElement, tAttrs)
@@ -89,6 +91,7 @@
 				var _element = element[0];
 				var context = element.parent()[0];
 				var compiled;
+				var img = element.find('img')[0];
 
 				scope.$$postDigest(compile);
 
@@ -101,14 +104,8 @@
 						return Math.round(width * page.height / page.width) + 'px';
 					})(_element.clientWidth, scope.page);
 
-					if ( compiled )
-						compiled = compiled.detach();
-
 					if (isVisible(element, context))
-					{
-						compiled = compiled || $compile(template)(scope);
-						element.append(compiled);
-					}
+						img.src = scope.pageUrlPrefix + '/media/' + scope.page.pdf + '/' + scope.page.pdfIndex;
 				}
 
 				function $destroy()
