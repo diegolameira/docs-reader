@@ -22,6 +22,7 @@
 	background: #fff;
 	box-shadow: 0 4px 4px rgba(0,0,0,.2);
 	width: 100%;
+	overflow: hidden;
 }
 
 .page img[src*=thumbnail]
@@ -39,6 +40,17 @@
 	display: block;
 	position: relative;
 	z-index: 1;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	will-change: filter;
+	-webkit-filter: blur(0);
+	-moz-filter: blur(0);
+	-o-filter: blur(0);
+	-ms-filter: blur(0);
+	filter: blur(0);
 }
 
 .page-label
